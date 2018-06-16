@@ -5,3 +5,5 @@ This project will be like [this video](https://www.youtube.com/watch?v=kPRA0W1kE
 # The structure of the program
 
 I'm going to use [draw.io](https://www.draw.io/) to draw the class diagrams for this program. 
+
+![](https://lh4.googleusercontent.com/SZUSnrgiZlsn9r3fMVqA2i_Rr_Y54XCqGXZDAHh0v9XnGdzUfzv-ijprtE6s1ojNLDljMEVHwl7h525Vr2qq=w1920-h947-rw)
