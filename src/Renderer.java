@@ -8,13 +8,14 @@ public class Renderer extends JPanel {
     private int[] array;
     private Sorter sorter;
 
+
     public static void main(String[] args) {
         Renderer renderer = new Renderer();
         renderer.start();
     }
 
     public Renderer() {
-        array = generateArray(300, 100);
+        array = generateArray(10, 100);
         sorter = new SelectionSorter();
 
         frame = new JFrame();
@@ -27,7 +28,7 @@ public class Renderer extends JPanel {
     }
 
     public synchronized void start() {
-        sorter.delay = 10;
+        sorter.delayMillis = 100;
         Thread thread = new Thread(() -> sorter.sort(array));
         thread.start();
 

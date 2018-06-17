@@ -5,7 +5,8 @@ public abstract class Sorter {
     public int selectedA;
     public int selectedB;
     public int[] swapIndeces = new int[2];
-    public long delay = 0;
+    public int delayMillis = 0;
+    public int delayNanos = 0;
     /**
      * Should sort an array of integer in ascending order.
      * @param array the array to be sorted.
@@ -19,24 +20,17 @@ public abstract class Sorter {
      * @param b
      */
     public void swap(int[] array, int a, int b) {
-        try {
-            Thread.sleep(delay);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         swapIndeces[0] = a;
         swapIndeces[1] = b;
 
-        int temp = array[a];
-        array[a] = array[b];
+        int temp = access(array, a);
+        array[a] = access(array, b);
         array[b] = temp;
     }
 
     public int access(int[] array, int index) {
-
         try {
-            Thread.sleep(delay);
+            Thread.sleep(delayMillis, delayNanos);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
