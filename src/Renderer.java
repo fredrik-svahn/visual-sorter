@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 public class Renderer extends JPanel {
     private JFrame frame;
@@ -12,6 +13,25 @@ public class Renderer extends JPanel {
         frame.setLocationRelativeTo(null);
         frame.add(this);
         frame.setVisible(true);
+
+
+        array = generateArray(100, 100);
+    }
+
+    /**
+     * Generate a random array of a certain size and maximum element value.
+     * @param size
+     * @param max
+     * @return
+     */
+    public int[] generateArray(int size, int max) {
+        Random rd = new Random();
+
+        for(int i = 0; i < size; i++) {
+            array[i] = rd.nextInt(max);
+        }
+
+        return array;
     }
 
     @Override
