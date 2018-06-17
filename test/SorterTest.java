@@ -6,18 +6,20 @@ import java.util.Arrays;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
 
-public class SorterTest {
+public abstract class SorterTest {
     private Sorter sorter;
     private int[] emptyArray;
     private int[] singleElementArray;
 
     @Before
     public void setup() {
-        sorter = new Sorter();
+        sorter = getSorter();
 
         emptyArray = new int[0];
         singleElementArray = new int[] {1};
     }
+
+    protected abstract Sorter getSorter();
 
     @Test
     public void sortingEmptyArrayShouldNotDoAnything() {
