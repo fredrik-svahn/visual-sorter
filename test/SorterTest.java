@@ -39,6 +39,15 @@ public abstract class SorterTest {
         assertThat(singleElementArray, equalTo(copy));
     }
 
+    @Test
+    public void sortingArrayWithTwoElementsInTheWrongOrderShouldSwapThem() {
+        int[] twoElements = new int[] {2, 1};
+
+        sorter.sort(twoElements);
+
+        assertThat(twoElements, equalTo(new int[] {1, 2}));
+    }
+
     private int[] copyArray(int[] target) {
         return Arrays.copyOf(target, target.length);
     }
