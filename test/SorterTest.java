@@ -9,12 +9,14 @@ import static org.junit.Assert.*;
 public class SorterTest {
     private Sorter sorter;
     private int[] emptyArray;
+    private int[] singleElementArray;
 
     @Before
     public void setup() {
         sorter = new Sorter();
 
         emptyArray = new int[0];
+        singleElementArray = new int[] {1};
     }
 
     @Test
@@ -24,6 +26,15 @@ public class SorterTest {
         sorter.sort(emptyArray);
 
         assertThat(emptyArray, equalTo(copy));
+    }
+
+    @Test
+    public void sortingArrayWithOnlyOneElementShouldNotDoAnything() {
+        int[] copy = copyArray(singleElementArray);
+
+        sorter.sort(singleElementArray);
+
+        assertThat(singleElementArray, equalTo(copy));
     }
 
     private int[] copyArray(int[] target) {
