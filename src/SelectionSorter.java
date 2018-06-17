@@ -2,8 +2,11 @@ public class SelectionSorter extends Sorter{
     @Override
     public void sort(int[] array) {
         for(int i = 0; i < array.length; i++) {
+            selectedA = i;
             int minimumIndex = minimumInRange(array, i, array.length - 1);
             swap(array, i, minimumIndex);
+            swapIndeces[0] = i;
+            swapIndeces[1] = minimumIndex;
         }
     }
 
@@ -18,6 +21,7 @@ public class SelectionSorter extends Sorter{
         int currentMinimum = start;
 
         for(int i = start; i <= stop; i++) {
+            selectedB = i;
             if(access(array, i) < access(array, currentMinimum)) {
                 currentMinimum = i;
             }
